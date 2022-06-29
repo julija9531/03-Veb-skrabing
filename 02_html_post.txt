@@ -1,0 +1,35 @@
+"673814" data-navigatable="" tabindex="0" class="tm-articles-list__item"><div class="tm-article-snippet"><div class="tm-article-snippet__meta-container"><div class="tm-article-snippet__meta"><span class="tm-user-info tm-article-snippet__author"><a href="/ru/users/virusaga/" title="virusaga" class="tm-user-info__userpic"><div class="tm-entity-image"><svg height="24" width="24" class="tm-svg-img tm-image-placeholder tm-image-placeholder_lilac"><!----> <use xlink:href="/img/megazord-v25.c73165cd.svg#placeholder-user"></use></svg></div></a> <span class="tm-user-info__user"><a href="/ru/users/virusaga/" class="tm-user-info__username">
+      virusaga
+    </a> </span></span> <span class="tm-article-snippet__datetime-published"><time datetime="2022-06-28T12:40:36.000Z" title="2022-06-28, 15:40">сегодня в 15:40</time></span></div> <!----></div> <h2 class="tm-article-snippet__title tm-article-snippet__title_h2"><a href="/ru/company/timeweb/blog/673814/" data-article-link="" class="tm-article-snippet__title-link"><span>Cisco UCS C220 (Fabric Interconnection 6842) + Dell EMC VNX 5300</span></a></h2> <div class="tm-article-snippet__hubs"><span class="tm-article-snippet__hubs-item"><a href="/ru/company/timeweb/blog/" class="tm-article-snippet__hubs-item-link"><span>Блог компании Timeweb Cloud</span> <!----></a></span><span class="tm-article-snippet__hubs-item"><a href="/ru/hub/cisconetworks/" class="tm-article-snippet__hubs-item-link"><span>Cisco</span> <span title="Профильный хаб" class="tm-article-snippet__profiled-hub">*</span></a></span><span class="tm-article-snippet__hubs-item"><a href="/ru/hub/san/" class="tm-article-snippet__hubs-item-link"><span>SAN</span> <span title="Профильный хаб" class="tm-article-snippet__profiled-hub">*</span></a></span><span class="tm-article-snippet__hubs-item"><a href="/ru/hub/dwh/" class="tm-article-snippet__hubs-item-link"><span>Хранение данных</span> <span title="Профильный хаб" class="tm-article-snippet__profiled-hub">*</span></a></span></div> <!----> <!----> <div class="tm-article-body tm-article-snippet__lead"><!----> <div><div><div class="article-formatted-body article-formatted-body article-formatted-body_version-1"><img src="https://habrastorage.org/webt/ca/ep/5p/caep5pcnxa4jxi11afrtqri_lpk.jpeg" alt="image"><br>
+
+<br>
+
+Началось с того, что у меня развалилась FS — подробнее <a href="https://community.cisco.com/t5/unified-computing-system/cisco-ucs-fabric-intercconect-boot-failure/m-p/4171610" rel="nofollow noopener noreferrer">тут</a>. Бэкапов, конечно же, нет. <br>
+
+Как определил? Потребовалось прокинуть новый VLAN, а он прокидывается только Cisco UCS Manager далее (CUM). Перезагрузил Fabric B, она в варнинге (warning), подключился консольником и увидел ошибку, спустя 7 месяцев раздобыл ресурсы для того, чтобы все виртуалки перенести на другие сервера. Перенёс VM, перезагрузил Fabric A, и ВСЁ!!! Больше ничего не загрузилось.<br>
+
+<br>
+
+Для меня этот зверь был необуздан, поэтому много искал и читал…<br>
+
+<br>
+
+Для начала требуется скачать с оф. сайта прошивку. Несмотря на то, что у меня Interconnection 6248, прошивку скачивал для 6100 Series. Распаковал bin файл через 7zip и достал:<br>
+
+<br>
+
+<ul>
+
+<li>ucs-6100-k9-kickstart.5.2.3.N2.2.23e.bin;</li>
+
+<li>ucs-6100-k9-system.5.2.3.N2.2.23e.bin;</li>
+
+<li>ucs-manager-k9.2.2.3e.bin.</li>
+
+</ul><br>
+
+Поставил ноут, загрузился с Ubuntu, нажав при загрузке «Попробовать сейчас» (Try now), скачал и запустил SSH demon, потом установил статичный ip, подключился в первую фабрику.<br></div></div> <DIV class="v-portal" style="display:none;"></DIV></div> <a href="/ru/company/timeweb/blog/673814/" class="tm-article-snippet__readmore"><span>Читать дальше &rarr;</span></a></div></div> <div class="tm-data-icons"><!----> <div class="tm-votes-meter tm-data-icons__item"><svg height="24" width="24" class="tm-svg-img tm-votes-meter__icon tm-votes-meter__icon tm-votes-meter__icon_appearance-article"><title>Всего голосов 5: ↑5 и ↓0</title> <use xlink:href="/img/megazord-v25.c73165cd.svg#counter-rating"></use></svg> <span title="Всего голосов 5: ↑5 и ↓0" class="tm-votes-meter__value tm-votes-meter__value tm-votes-meter__value_positive tm-votes-meter__value_appearance-article tm-votes-meter__value_rating">+5</span></div> <span title="Количество просмотров" class="tm-icon-counter tm-data-icons__item"><svg height="24" width="24" class="tm-svg-img tm-icon-counter__icon"><title>Просмотры</title> <use xlink:href="/img/megazord-v25.c73165cd.svg#counter-views"></use></svg> <span class="tm-icon-counter__value">586</span></span> <button title="Добавить в закладки" type="button" class="bookmarks-button tm-data-icons__item"><span title="Добавить в закладки" class="tm-svg-icon__wrapper bookmarks-button__icon"><svg height="24" width="24" class="tm-svg-img tm-svg-icon"><title>Добавить в закладки</title> <use xlink:href="/img/megazord-v25.c73165cd.svg#counter-favorite"></use></svg></span> <span title="Количество пользователей, добавивших публикацию в закладки" class="bookmarks-button__counter">
+    2
+  </span></button> <div title="Читать комментарии" class="tm-article-comments-counter-link tm-data-icons__item"><a href="/ru/company/timeweb/blog/673814/comments/" class="tm-article-comments-counter-link__link"><svg height="24" width="24" class="tm-svg-img tm-article-comments-counter-link__icon"><title>Комментарии</title> <use xlink:href="/img/megazord-v25.c73165cd.svg#counter-comments"></use></svg> <span class="tm-article-comments-counter-link__value">
+      0
+    </span></a> <!----></div> <!----> <DIV class="v-portal" style="display:none;"></DIV></div>
